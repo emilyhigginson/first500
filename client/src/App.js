@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import WordCard from "./WordCard";
+import VocabList from "./VocabList";
+import Header from "./Header";
+import "./style.css";
+
+
 
 function App() {
+const [wordArray, setWordArray] = useState([])
+
+  useEffect(() => {
+    fetch("/words")
+      .then((r) => r.json())
+      .then((data) => setWordArray(data));}
+      , []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+     <WordCard wordArray ={wordArray} />
+     <VocabList wordArray={wordArray} />
     </div>
   );
 }

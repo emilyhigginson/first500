@@ -1,0 +1,65 @@
+
+  #card {
+    border-radius: 0px;
+   border: 1px solid black;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+   width: 243px;
+   height: 243px;
+   padding: 5px 20px;
+   background-color: pink; 
+ } 
+ .prevCard {
+   left: calc(0% + 2rem);
+   opacity: 0;
+   height: 200px;
+ 
+   } 
+   .activeCard {
+     left: 50%;
+     height: 200px;
+ 
+     transform: translateX(-50%);                                
+   }
+   .nextCard {
+     left: 100%;
+     height: 200px;
+     transform: translateX(calc(-100% - 2rem));
+     opacity: 0;
+   } 
+ 
+   .card-container{
+     height: 200px;
+     margin-bottom: 300px;
+   }
+
+ article {
+   position: absolute;
+   width: 12rem;
+   height: 500px;
+   transition: all 1s; 
+
+ }
+ 
+ .leftBtn {
+   left: -1rem;
+   position: absolute;
+   justify-content: center;
+   margin-top: 200px;
+   width: 243px;
+   height: 243px;
+ }
+ .rightBtn {
+   right: -1rem;
+   position: absolute;
+   justify-content: center;
+   margin-top: 200px;
+   width: 243px;
+   height: 243px;
+ }
